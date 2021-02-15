@@ -5,4 +5,5 @@ sortFile\sortFile.vcxproj.user
 sortFile\Debug
 .vs/
 Debug/
+sortFile\tmp
 
