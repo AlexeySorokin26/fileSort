@@ -2,3 +2,4 @@ sortFile.sln
 sortFile\sortFile.vcxproj
 sortFile\sortFile.vcxproj.filters
 sortFile\sortFile.vcxproj.user
+.vs/
