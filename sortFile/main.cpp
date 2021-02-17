@@ -6,6 +6,7 @@
 #include <chrono>
 //#define DEBUG
 
+
 using namespace std;
 
 struct bucket {
@@ -344,18 +345,23 @@ int main(int argc, char* argv[])
 
     //srand(time(nullptr));
     //fillArr(arr, arrSize);
-    //writeArrInFile(mainFolder + fileName, arr, arrSize);
+    
     const int numberOfFiles = 307;
     int* arr = new int[arrSize];
     int* bigArr = new int[arrSize * numberOfFiles];
     for (int i = 0; i < numberOfFiles; ++i) {
-        // we first get our data; then sort it file; after sort it adding to the result file
-        fileName = "sortfile" + to_string(i) + ".txt";
-    
+        // we first get our data; then sort it file; after sort it; then adding to the result file with sorting again
 #ifdef DEBUG
         auto start = chrono::high_resolution_clock::now();
 #endif // DEBUG
+        // if we don't have a data we can generate it
+        //fillArr(arr, arrSize);
+        //writeArrInFile(mainFolder + fileName, arr, arrSize);
+
+        // or just read it 
+        fileName = "sortfile" + to_string(i) + ".txt";
         readArrFrFile(mainFolder + fileName, arr, arrSize);
+       
 #ifdef DEBUG  
         auto end = chrono::high_resolution_clock::now();
         chrono::duration<double> elapsed = end - start;
